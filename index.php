@@ -199,9 +199,10 @@ $comResult = mysqli_query($connection, $completedQuery);
         });
         $(document).ready(function(){
             $("#bulksubmit").on('click',function () {
-                $('#action').val() == 'bulkdelete';
-                if(!confirm("do you want to delete")) {
-                    return false;
+                if($('#action').val() == 'bulkdelete'){
+                    if(!confirm("do you want to delete")) {
+                        return false;
+                    }
                 }
             });
         });
